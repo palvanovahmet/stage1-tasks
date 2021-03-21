@@ -91,12 +91,22 @@ body {
 	background-color: rgba(255, 255, 255, 0.85);
 	border: 4px solid #313940;
 	border-radius: 0px 0px 12px 12px;
-	transition: 0.3s;
+	transition: background 1s;
 	cursor: pointer;
 }
 .piano-key:hover {
 	background-color: #fff;
 }
+.piano-key:active{
+	background:	 #00b4a4;
+	transition: background 0s;
+}
+
+.active{
+	background: #00b4a4;
+	transition: background 0s;
+}
+
 .keys-sharp {
 	position: absolute;
 	top: 0;
@@ -128,6 +138,8 @@ body {
 	border-radius: 0;
 	pointer-events: none;
 }
+
+/*
 .piano-key::before,
 .piano-key::after {
 	content: attr(data-note);
@@ -146,6 +158,37 @@ body {
 	display: none;
 	content: attr(data-letter);
 }
+*/
+.notes::before,
+.notes::after {
+	content: attr(data-note);
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	font-size: 26px;
+	line-height: 40px;
+	text-align: center;
+	color: #a2abb3;
+	bottom: -45px;
+	left: 20px;
+	transition: 0.3s;	
+}
+
+.letters::before,
+.letters::after {
+	content: attr(data-letter);
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	font-size: 26px;
+	line-height: 40px;
+	text-align: center;
+	color: #a2abb3;
+	bottom: -45px;
+	left: 20px;
+	transition: 0.3s;	
+}
+
 .piano-key:hover::before,
 .piano-key:hover::after {
 	color: #d7dfe6;
